@@ -1,0 +1,20 @@
+.row
+  - if signed_in?
+    - provide(:title, 'Indice')
+    aside.col-md-4
+      section
+        = render 'shared/user_info'
+
+    div.col-md-8
+      .timeline
+        h2.title Tweets...
+        = render 'shared/feed'
+
+  - else
+    - provide(:title, 'Bienvenido')
+    div.col-md-12.one-col
+      h1 Bienvenido al Clon de Twitter
+      p Empieza una conversacion, explora tus intereses, y date a conocer
+
+      = link_to 'Registrarse', signup_path, class: "btn btn-primary"
+      = link_to 'Entrar', signin_path, class: "btn btn-default"

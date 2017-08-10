@@ -1,0 +1,20 @@
+- provide(:title, "Entrar")
+
+.row
+  div.col-md-12.one-col
+    h1 Entra al Clon de Twitter
+
+    = form_for(:session, url: sessions_path) do |f|
+      .form-group
+        = f.label :Correo, class: 'control-label'
+        = f.text_field :email, class: 'form-control'
+
+      .form-group
+        = f.label :Clave, class: 'control-label'
+        = f.password_field :password, class: 'form-control'
+
+      = f.submit "Entrar", class: "btn btn-large btn-primary"
+
+    p
+      | Nuevo usuario? 
+      == link_to "Registrate ahora!", signup_path

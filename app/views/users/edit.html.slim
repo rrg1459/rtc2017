@@ -1,0 +1,32 @@
+- provide(:title, 'Editar usuario')
+.row
+  div.col-md-12.one-col
+    h1 Actualiza tu perfil
+
+    = form_for(@user) do |f|
+      = render 'shared/error_messages', object: f.object
+
+      .form-group
+        = f.label :nombre, class: 'control-label'
+        = f.text_field :name, class: 'form-control'
+
+      .form-group
+        = f.label :correo, class: 'control-label'
+        = f.text_field :email, class: 'form-control'
+
+      .form-group
+        = f.label :clave, class: 'control-label'
+        = f.password_field :password, class: 'form-control'
+
+      .form-group
+        = f.label 'confirmacion de clave', class: 'control-label'
+        = f.password_field :password_confirmation, class: 'form-control'
+
+      .actions
+        = f.submit "Guardar cambios", class: "btn btn-large btn-primary"
+
+      div
+        = gravatar_for @user
+        <a href="http://gravatar.com/emails">cambiar la imagen</a>
+
+    = link_to 'Eliminar mi cuenta', @user, method: :delete, data: { confirm: '{Esta usted seguro?' }, class: "btn btn-danger"
