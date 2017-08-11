@@ -1,7 +1,7 @@
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \\\\\\\\\\\\\\\\\\H E R O K U\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 git add -A
-git commit -m "mensaje 404 pagina no existe"
+git commit -m "se agrega el tiempo transcurrido de un twett en castellano"
 git push heroku  master
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 git push heroku -f master
@@ -18,7 +18,11 @@ echo "# rtc2017" >> README.md
 git init
 //////////////////////////////////////////////
 git add -A
-git commit -am "primer commit de rtc2017"
+git commit -am "se agrega el tiempo transcurrido de un twett en castellan"
 git remote add origin https://github.com/rrg1459/rtc2017.git
 git push -u origin master
 ///////////////////////////////////////////////
+
+git add -A
+git commit -am "se agrega el tiempo transcurrido de un twett en castellan"
+git push -u origin master

@@ -1,0 +1,20 @@
+ El volumen de la unidad D es DATA
+ El n£mero de serie del volumen es: 0EFF-BA3F
+
+ Directorio de D:\Sites\RTC\app\views\users
+
+11/08/2017  07:42 a.m.    <DIR>          .
+11/08/2017  07:42 a.m.    <DIR>          ..
+11/08/2017  07:42 a.m.                 0 directorio
+10/08/2017  06:37 a.m.             1.063 edit.html.slim
+10/08/2017  06:33 a.m.               263 index.html.slim
+11/08/2017  07:28 a.m.               362 input.html.slim
+09/08/2017  02:45 p.m.               935 new.html.slim
+11/08/2017  07:33 a.m.                23 output.html
+11/08/2017  07:35 a.m.                28 output.html.eerb
+11/08/2017  07:38 a.m.               573 output.html.erb
+11/08/2017  07:20 a.m.               362 show.html.slim
+08/08/2017  06:01 a.m.               337 show_follow.html.slim
+08/08/2017  06:01 a.m.                81 _user.html.slim
+              11 archivos          4.027 bytes
+               2 dirs  241.282.043.904 bytes libres

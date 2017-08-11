@@ -4,7 +4,7 @@ li.tweet.clearfix id="#{feed_item.id}"
     .user = link_to feed_item.user.name, feed_item.user
     .tweet-content = wrap(feed_item.content)
     .tweet-footer
-      Posted hace #{time_ago_in_words(feed_item.created_at)}.
+      Posted hace #{time_ago_in_words(feed_item.created_at)}
       - if current_user?(feed_item.user)
         .tweet-actions = link_to "borrar", feed_item, method: :delete,
                                                       data: { confirm: "Esta seguro?" },
