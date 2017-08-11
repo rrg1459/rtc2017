@@ -24,5 +24,5 @@ git push -u origin master
 ///////////////////////////////////////////////
 
 git add -A
-git commit -am "se agrega el tiempo transcurrido de un twett en castellan"
+git commit -am "Se agrega pantalla_dunas"
 git push -u origin master

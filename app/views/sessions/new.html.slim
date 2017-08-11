@@ -1,20 +1,30 @@
 - provide(:title, "Entrar")
 
+body.pantalla_dunas
+
 .row
-  div.col-md-12.one-col
-    h1 Entra al Clon de Twitter
+  div.col-md-12
+    h3 Entra al Clon de Twitter
 
     = form_for(:session, url: sessions_path) do |f|
       .form-group
         = f.label :Correo, class: 'control-label'
-        = f.text_field :email, class: 'form-control'
+        = f.text_field :email, class: 'form-control', style: "width: 242px;"
 
       .form-group
         = f.label :Clave, class: 'control-label'
-        = f.password_field :password, class: 'form-control'
+        = f.password_field :password, class: 'form-control', style: "width: 242px;"
 
       = f.submit "Entrar", class: "btn btn-large btn-primary"
 
     p
       | Nuevo usuario? 
       == link_to "Registrate ahora!", signup_path
+
+
+
+footer
+  h6[style="text-align: right"]
+    | Parque Nacional Médanos de Coro
+    br
+    | Península de Paraguaná, Estado de Falcón

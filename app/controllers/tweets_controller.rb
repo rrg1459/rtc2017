@@ -6,7 +6,7 @@ class TweetsController < ApplicationController
   def index
     @tweet = current_user.tweets.build if signed_in?
     @feed_items = Tweet.all.paginate(page: params[:page])
-    render 'static_pages/home'
+    render 'paginas_fijas/home'
   end
 
   def create

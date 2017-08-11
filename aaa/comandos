@@ -1,0 +1,61 @@
+slimrb input.html.slim -e  > output.html.erb
+
+slimrb error_404.html.slim -e > error_404.html.erb
+slimrb error_500.html.slim -e > error_500.html.erb
+
+
+slimrb application.html.slim -e > application.html.erb
+slimrb _footer.html.slim     -e > _footer.html.erb
+slimrb _header.html.slim     -e > _header.html.erb
+
+slimrb _error_messages.html.slim -e >  _error_messages.html.erb
+slimrb _feed.html.slim           -e >  _feed.html.erb
+slimrb _feed_item.html.slim      -e >  _feed_item.html.erb
+slimrb _follow.html.slim         -e >  _follow.html.erb
+slimrb _follow_form.html.slim    -e >  _follow_form.html.erb
+slimrb _profile.html.slim        -e >  _profile.html.erb
+slimrb _stats.html.slim          -e >  _stats.html.erb
+slimrb _tweet_form.html.slim     -e >  _tweet_form.html.erb
+slimrb _unfollow.html.slim       -e >  _unfollow.html.erb
+slimrb _user_info.html.slim      -e >  _user_info.html.erb
+
+slimrb new.html.slim     -e > new.html.erb
+
+slimrb acercade.html.slim  -e >   acercade.html.erb
+slimrb home.html.slim      -e >   home.html.erb
+
+slimrb edit.html.slim         -e > edit.html.erb
+slimrb index.html.slim        -e > index.html.erb
+slimrb input.html.slim        -e > input.html.erb
+slimrb new.html.slim          -e > new.html.erb
+slimrb show.html.slim         -e > show.html.erb
+slimrb show_follow.html.slim  -e > show_follow.html.erb
+slimrb _user.html.slim        -e > _user.html.erb
+
+
+
+del application.html.slim
+del  _footer.html.slim
+del  _header.html.slim
+
+del _error_messages.html.slim
+del _feed.html.slim
+del _feed_item.html.slim
+del _follow.html.slim
+del _follow_form.html.slim
+del _profile.html.slim
+del _stats.html.slim
+del _tweet_form.html.slim
+del _unfollow.html.slim
+del _user_info.html.slim
+
+
+
+
+del edit.html.slim
+del index.html.slim
+del input.html.slim
+del new.html.slim
+del show.html.slim
+del show_follow.html.slim
+del _user.html.slim

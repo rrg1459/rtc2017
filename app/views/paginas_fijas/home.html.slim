@@ -1,3 +1,4 @@
+body.pantalla_dunas
 .row
   - if signed_in?
     - provide(:title, 'Indice')
@@ -12,9 +13,16 @@
 
   - else
     - provide(:title, 'Bienvenido')
-    div.col-md-12.one-col
+    div.col-md-12
       h1 Bienvenido al Clon de Twitter
       p Empieza una conversacion, explora tus intereses, y date a conocer
 
       = link_to 'Registrarse', signup_path, class: "btn btn-primary"
       = link_to 'Entrar', signin_path, class: "btn btn-default"
+
+footer
+  h6[style="text-align: right"]
+    | Parque Nacional Médanos de Coro
+    br
+    | Península de Paraguaná, Estado de Falcón
+    

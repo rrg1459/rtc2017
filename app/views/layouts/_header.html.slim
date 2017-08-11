@@ -30,7 +30,7 @@
               = icon("sign-out")
               span Salir
         - else
-          - unless params[:controller] == 'static_pages'
+          - unless params[:controller] == 'paginas_fijas'
             li = link_to "Usuarios",  users_path
             li = link_to "Todos los tweets", tweets_path
             li = link_to "Entrar", signin_path

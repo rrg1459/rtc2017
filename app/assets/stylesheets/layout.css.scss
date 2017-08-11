@@ -1,6 +1,7 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "dunas";
 
 $gray: #aaa;
 $lightGray: #e8e8e8;
@@ -133,4 +134,11 @@ textarea {
   .fa {
     margin-right: 8px;
   }
+}
+
+.footer {
+    color: black;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }

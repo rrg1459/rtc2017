@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'static_pages#home'
+  root 'paginas_fijas#home'
 
   resources :users do
     member do
@@ -10,10 +10,10 @@ Rails.application.routes.draw do
   resources :tweets,        only: [:index, :create, :destroy]
   resources :relationships, only: [:create, :destroy]
 
-  get    'signup'   => 'users#new'
-  get    'signin'   => 'sessions#new'
-  delete 'signout'  => 'sessions#destroy'
-  get    'acercade'    => 'static_pages#acercade'
+  get    'signup'      => 'users#new'
+  get    'signin'      => 'sessions#new'
+  delete 'signout'     => 'sessions#destroy'
+  get    'acercade'    => 'paginas_fijas#acercade'
 
   match '*path' => 'application#routing_error', via: :all
 end
