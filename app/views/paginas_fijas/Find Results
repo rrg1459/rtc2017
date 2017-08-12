@@ -1,0 +1,116 @@
+Searching 413 files for "Followers"
+
+D:\sites\rtc2017\app\controllers\users_controller.rb:
+    1  class UsersController < ApplicationController
+    2:   before_action :set_user,       only: [:show, :edit, :update, :destroy, :following, :followers]
+    3    before_action :signed_in_user, only: [:edit, :update, :destroy]
+    4    before_action :correct_user,   only: [:edit, :update, :destroy]
+    .
+   59    end
+   60  
+   61:   def followers
+   62:     @title = "Followers"
+   63:     @users = @user.followers.paginate(page: params[:page])
+   64      render :show_follow
+   65    end
+
+D:\sites\rtc2017\app\models\user.rb:
+    6                                     class_name: 'Relationship',
+    7                                     dependent: :destroy
+    8:   has_many :followers, through: :reverse_relationships, source: :follower
+    9  
+   10    before_save { self.email = email.downcase }
+
+D:\sites\rtc2017\app\views\shared\_stats.html.slim:
+   10        td = link_to @user.tweets.count, user_path(@user)
+   11        td = link_to @user.followed_users.count, following_user_path(@user)
+   12:       td = link_to @user.followers.count, followers_user_path(@user)
+   13  
+
+D:\sites\rtc2017\config\routes.rb:
+    4    resources :users do
+    5      member do
+    6:       get :following, :followers
+    7      end
+    8    end
+
+D:\sites\rtc2017\lib\tasks\sample_data.rake:
+   41    user  = users.first
+   42    followed_users = users[2..50]
+   43:   followers      = users[3..40]
+   44    followed_users.each { |followed| user.follow!(followed) }
+   45:   followers.each      { |follower| follower.follow!(user) }
+   46  end
+   47  
+
+D:\sites\rtc2017\log\development.log:
+    <binary>
+
+D:\sites\rtc2017\spec\features\authentication_pages_spec.rb:
+   89          end
+   90  
+   91:         describe "visit the followers page" do
+   92:           before { visit followers_user_path(user) }
+   93:           it { should have_title('Followers') }
+   94          end
+   95  
+
+D:\sites\rtc2017\spec\features\static_pages_spec.rb:
+   32  
+   33          it { should have_link('0', href: following_user_path(user)) }
+   34:         it { should have_link('1', href: followers_user_path(user)) }
+   35        end
+   36  
+
+D:\sites\rtc2017\spec\features\user_pages_spec.rb:
+  147          end
+  148  
+  149:         it "should increment the other user's followers count" do
+  150            expect do
+  151              click_button "Follow"
+  152:           end.to change(other_user.followers, :count).by(1)
+  153          end
+  154  
+  ...
+  171          end
+  172  
+  173:         it "should decrement the other user's followers count" do
+  174            expect do
+  175              click_button "Unfollow"
+  176:           end.to change(other_user.followers, :count).by(-1)
+  177          end
+  178  
+  ...
+  185    end
+  186  
+  187:   describe "following/followers" do
+  188      let(:other_user) { FactoryGirl.create(:user) }
+  189      before { user.follow!(other_user) }
+  ...
+  200      end
+  201  
+  202:     describe "followers" do
+  203        before do
+  204          sign_in other_user
+  205:         visit followers_user_path(other_user)
+  206        end
+  207  
+  208:       it { should have_title('Fxollowers') }
+  209:       it { should have_selector('h2', text: 'Followers') }
+  210        it { should have_link(user.name, href: user_path(user)) }
+  211      end
+
+D:\sites\rtc2017\spec\models\user_spec.rb:
+   19    it { should respond_to(:followed_users) }
+   20    it { should respond_to(:reverse_relationships) }
+   21:   it { should respond_to(:followers) }
+   22    it { should respond_to(:following?) }
+   23    it { should respond_to(:follow!) }
+   ..
+  158  
+  159      describe "followed user" do
+  160:       specify { expect(other_user.followers).to include(user) }
+  161      end
+  162    end
+
+27 matches across 10 files

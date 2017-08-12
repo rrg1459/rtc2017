@@ -53,13 +53,13 @@ class UsersController < ApplicationController
   end
 
   def following
-    @title = "Following"
+    @title = "Siguiendo"
     @users = @user.followed_users.paginate(page: params[:page])
     render :show_follow
   end
 
   def followers
-    @title = "Followers"
+    @title = "Seguidores"
     @users = @user.followers.paginate(page: params[:page])
     render :show_follow
   end

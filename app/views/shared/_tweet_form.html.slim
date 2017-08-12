@@ -2,5 +2,5 @@
   = form_for(@tweet) do |f|
     = render 'shared/error_messages', object: f.object
     .field
-      = f.text_area :content, placeholder: "Escribe un nuevo Tweet..."
-    = f.submit "Enviarx", class: "btn btn-large btn-primary"
+      = f.text_area :content, placeholder: "Escribe un nuevo Tweet...(hasta 200 caracteres)"
+    = f.submit "Enviar", class: "btn btn-large btn-primary"
